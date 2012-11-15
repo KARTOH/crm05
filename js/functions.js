@@ -1,3 +1,4 @@
+// Обьект управления "Окном даных"
 var win = {
     'menu':{
         'Id':'menu',
@@ -246,6 +247,10 @@ function UUID() {
     return uuid;
 }
 
+/**
+ * Обьект поддсчета нажатий
+ * @type {Object}
+ */
 var click = {
     'store' : {},
     'calculation' : function(){
@@ -285,6 +290,11 @@ var click = {
     }
 };
 
+/**
+ * Функция добавления CSS Класса
+ * @param elem HTMLObject
+ * @param Class String
+ */
 function addClass(elem,Class){
     if(elem.className === undefined){
         elem.className = '';
@@ -293,6 +303,11 @@ function addClass(elem,Class){
     elem.className += ' '+Class;
 }
 
+/**
+ * Функция удаления CSS класса
+ * @param elem HTMLObject
+ * @param Class String
+ */
 function removeClass(elem,Class){
     if(elem.className === undefined){
         elem.className = '';
@@ -303,6 +318,7 @@ function removeClass(elem,Class){
     elem.className = elem.className.replace(/ {1,}/g,'');
 }
 
+// Обьект управления Вклатками Футера
 var view_footer_detail = {
     'view_class' : 'activ-detail',
     'hidden' : function(){
@@ -328,6 +344,8 @@ var view_footer_detail = {
         addClass(detail,this.view_class);
     }
 };
+
+// Обьект Управления вкладками меню
 var view_menu_detail = {
     'view_class' : 'activ-menu',
     'hidden' : function(){
